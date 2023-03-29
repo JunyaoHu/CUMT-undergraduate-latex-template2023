@@ -1,7 +1,10 @@
-\documentclass[preprint,MD,numbers,times,AutoFakeBold]{cumtthesis}
+\documentclass[final,MD,numbers,times,AutoFakeBold]{cumtthesis}
+% 参数1：文档格式  预印版\终稿\盲审\检查 preprint, final, blindreview, check
+%       打印时修改为 final 仅考虑本科生模板，暂时不支持盲审\检查格式
+% 参数2：学位  本科\硕士\博士 BD MD PhD
+%       仅考虑本科生模板，暂时不支持硕士\博士格式
 \usepackage{fontspec}
 \usepackage{textcomp, gensymb}
-
 \setmainfont{Times New Roman}
 \usepackage{listings}
 \usepackage{multirow}
@@ -10,11 +13,13 @@
 \usepackage{etoolbox}
 \usepackage{color}
 % 使用更新的伪代码包写法
+\usepackage{algorithm}
 \usepackage{algpseudocodex}
 \usepackage{float}
 \usepackage{rotating}
 \usepackage{booktabs}
 \usepackage{enumerate}
+\usepackage{emptypage}
 \usepackage[a4paper,left=3.17cm,right=3.17cm,top=2.54cm,bottom=2.54cm]{geometry}
 \usetikzlibrary{matrix,calc,shapes,backgrounds,patterns,positioning,decorations.pathreplacing}
 %=================================== 数学符号 =================================%
@@ -41,11 +46,6 @@
 \robustify{\circled}
 \setlength{\intextsep}{10.0pt plus 2.0pt minus 2.0pt}
 
-
-\let\oldcite=\cite
-\renewcommand\cite[1]{
-  \textsuperscript{\oldcite{#1}}
-}
 \DeclareMathOperator*{\sgn}{sgn}
 %=================================== 数学符号 =================================%
 %=================================== Code Style ==============================%
@@ -53,74 +53,57 @@
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
 \definecolor{mymauve}{rgb}{0.58,0,0.82}
 \lstset{
-  aboveskip=3mm,
-  belowskip=3mm,
-  showstringspaces=false,
-  columns=flexible,
-  basicstyle={\normalsize\ttfamily},
-  numbers=left,
-  frame=L,
-  numberstyle=\tiny\color{mygray},
-  keywordstyle=\color{blue},
-  commentstyle=\color{mygreen},
-  stringstyle=\color{mymauve},
-  breaklines=true,
-  breakatwhitespace=true,
-  tabsize=3,
-  framextopmargin=2pt,framexbottommargin=2pt,abovecaptionskip=-3pt,belowcaptionskip=3pt,  
-  xleftmargin=1em, % 设定listing左右的空白
+    aboveskip=3mm,
+    belowskip=3mm,
+    showstringspaces=false,
+    columns=flexible,
+    basicstyle={\normalsize\ttfamily},
+    numbers=left,
+    frame=L,
+    numberstyle=\tiny\color{mygray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{mygreen},
+    stringstyle=\color{mymauve},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=3,
+    framextopmargin=2pt,framexbottommargin=2pt,abovecaptionskip=-3pt,belowcaptionskip=3pt,    
+    xleftmargin=1em, % 设定listing左右的空白
 }
 
 \begin{document}
-\input{tex/frontinfo}
-
-\input{tex/frontmatter}
-
-
-
-%--------插入中文目录
+% 正文前部分
+\frontmatter
+% 首页\第二页\授权声明\认定书\原创声明
+\input{article/frontinfo}
+% 致谢\中文摘要\英文摘要
+\input{article/frontmatter}
+% 中文目录
 \tableofcontents
-%--------插入英文目录
+% 英文目录
 \tableofecontents
-
-% --------插入图清单
-\listoffigures
-% --------插入表清单
-\listoftables
-
-% --------插入变量注释表
-\begin{notation}[2.5cm]
-\item[$min\_s$] 最小支持度
-\item[$min\_c$] 最小置信度
-\item[$R$] 空间邻近关系
-\item[$row\_instance$]  行实例
-\item[$table\_instance$] 表实例
-\item[$PR(c,f_i)$] 空间参与率
-\item[$PI(c)$] 空间参与度
-\item[$min\_prev$] 最小参与度
-\item[$\delta_i$] 流入量
-\item[$\omega_i$] 流出量
-\item[$\psi_i$] 流入流出比
-\item[$Q$] 模块值
-\item[$\Delta Q$] 模块增益值
-\end{notation}
-
-%================================== 正文开始 ==================================%
-
+% 图清单
+% \listoffigures
+% 表清单
+% \listoftables
+% 变量注释表
+% \input{article/variable}
+% 正文部分
 \mainmatter
-% 写新章节后必须在这里include tex文件，否则无法编译
-\include{tex/chap1}
-\include{tex/chap2}
-\include{tex/chap3}
-\include{tex/chap4}
-
+% 写新章节后必须在这里include在article文件夹的文件，否则无法编译
+\include{article/chap1}
+\include{article/chap2}
+\include{article/chap3}
+\include{article/chap4}
+% 正文后部分
 \backmatter
-
-% 参考文献格式使用cumt.bst
+% TODO: 参考文献格式.bst和参考文献.bib使用cumt.bst
 \bibliographystyle{biblio/cumt}
+% \bibliographystyle{biblio/cumt-num}
+% \bibliographystyle{biblio/new-cumt-num}
 \bibliography{biblio/RefExam}
-
-%\include{tex/resume}
+% 简历
+% \include{article/resume}
 
 \GuanJianCi{浮选,旋流,分选机理,浮选动力学,矿物分选}
 \BingLieTiMing{Analysis and Data Mining about Spatial Data of Sina Weibo Based on Spatial-Spark}
@@ -132,15 +115,15 @@
 \LunWenTiJiaoRiQi{2022 年 6 月}
 \DaBianWeiYuanHuiChengYuan{王永波,杨化超,陈国良,刘志平}
 \LunWenZiZhu{无}
-%\XueWeiShouYuDanWeiMingCheng{}
-%\XueWeiShouYuDanWeiDaiMa{}
-%\XueWeiJiBie{}
-%\LunWenTiMing{}
-%\PeiYangDanWeiMingCheng{}
-%\YouBian{}
-%\XueWeiShouYuNian{}
+\XueWeiShouYuDanWeiMingCheng{}
+\XueWeiShouYuDanWeiDaiMa{}
+\XueWeiJiBie{}
+\LunWenTiMing{}
+\PeiYangDanWeiMingCheng{}
+\YouBian{}
+\XueWeiShouYuNian{}
 
-% \makebackcover
-%\printindex
+\makebackcover
+\printindex
 \clearpage
 \end{document}
