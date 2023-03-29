@@ -1,7 +1,30 @@
 # 说明
-本项目为非官方矿大本科毕业论文latex版本。改编于[2021年的类似项目](https://github.com/LuXiwen1999/cumtthesis/)。感谢矿大各位学长学姐的贡献，让这个项目逐步完善了起来。有问题请在issues中提出。
+本项目为非官方矿大本科毕业论文latex版本。改编自前人项目。
 
-2022版本比起2021版本，修复了一些错误，使其适配于windows10下vscode编辑器的使用。
+```
+%% Verison
+%% 
+%% 20xx/xx/xx v1.0 
+%% ?
+%% 
+%% 2015/08/04 v2.0
+%% 肖立顺
+%% https://github.com/xiaolishun/cumtthesis/tree/%% f846fc4b00fb785987a70bb401659c2ca34aa5cb
+%% 
+%% 2017/05/29 v3.0 
+%% 高峰
+%% https://github.com/RayYoung000/GraduationThesis
+%% 
+%% 2021/05/18 v4.0
+%% 陆玺文
+%% https://github.com/Xiwen-Lu/cumtthesis
+%% 
+%% 2022/05/03 v5.0
+%% Lighter207
+%% https://github.com/Lighter207/CUMT-undergraduate-latex-template2022
+```
+
+2023版本比起2022版本，主要改进的地方：把本科生论文的声明、授权相关页面进行了修改，读了部分代码并进行了一些注释和缩进方便后人进一步修改。主页logo图采用[标识系统官网](https://www.cumt.edu.cn/19843/list.htm)的图片。
 
 # 效果
 见示例PDF——thesis.pdf
