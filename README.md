@@ -22,6 +22,10 @@
 %% 2022/05/03 v5.0
 %% Lighter207
 %% https://github.com/Lighter207/CUMT-undergraduate-latex-template2022
+%% 
+%% 2023/03/04 v6.0
+%% JunyaoHu
+%% https://github.com/JunyaoHu/CUMT-undergraduate-latex-template2023
 ```
 
 2023版本比起2022版本，主要改进的地方：把本科生论文的声明、授权相关页面进行了修改，读了部分代码并进行了一些注释和缩进方便后人进一步修改。主页logo图采用[标识系统官网](https://www.cumt.edu.cn/19843/list.htm)的图片。
