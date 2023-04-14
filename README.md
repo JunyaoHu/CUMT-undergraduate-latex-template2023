@@ -26,9 +26,13 @@
 %% 2023/03/04 v6.0
 %% JunyaoHu
 %% https://github.com/JunyaoHu/CUMT-undergraduate-latex-template2023
+%%
+%% 2023/03/04 v6.1
+%% Tony-Lowe
+%% https://github.com/Tony-Lowe/CUMT-undergraduate-latex-template2023
 ```
 
-# 本项目暂不更新，建议同学们使用 @Tony-Lowe 的版本
+# 本项目停止更新，不再进行修改，建议同学们使用 @Tony-Lowe 的版本
 
 @Tony-Lowe 的2023版本：https://github.com/Tony-Lowe/CUMT-undergraduate-latex-template2023
 
