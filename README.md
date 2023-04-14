@@ -28,7 +28,11 @@
 %% https://github.com/JunyaoHu/CUMT-undergraduate-latex-template2023
 ```
 
-2023版本比起2022版本，主要改进的地方：把本科生论文的声明、授权相关页面进行了修改，读了部分代码并进行了一些注释和缩进方便后人进一步修改。主页logo图采用[标识系统官网](https://www.cumt.edu.cn/19843/list.htm)的图片。
+# 本项目暂不更新，建议同学们使用 @Tony-Lowe 的版本
+
+@Tony-Lowe 的2023版本：https://github.com/Tony-Lowe/CUMT-undergraduate-latex-template2023
+
+本项目主要进行的改动：2023版本比起2022版本，主要改进的地方：把本科生论文的声明、授权相关页面进行了修改，读了部分代码并进行了一些注释和缩进方便后人进一步修改。主页logo图采用[标识系统官网](https://www.cumt.edu.cn/19843/list.htm)的图片。
 
 # 效果
 见示例PDF——thesis.pdf
